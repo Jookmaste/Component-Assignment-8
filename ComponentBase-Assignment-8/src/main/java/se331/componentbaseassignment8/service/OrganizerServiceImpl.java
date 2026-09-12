@@ -1,9 +1,9 @@
-package se331.componentbaseassignment7.service;
+package se331.componentbaseassignment8.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import se331.componentbaseassignment7.dao.OrganizerDao;
-import se331.componentbaseassignment7.entity.Organizer;
+import se331.componentbaseassignment8.dao.OrganizerDao;
+import se331.componentbaseassignment8.entity.Organizer;
 
 import java.util.List;
 

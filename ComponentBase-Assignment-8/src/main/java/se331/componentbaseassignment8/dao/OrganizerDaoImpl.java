@@ -1,7 +1,7 @@
-package se331.componentbaseassignment7.dao;
+package se331.componentbaseassignment8.dao;
 
 import org.springframework.stereotype.Repository;
-import se331.componentbaseassignment7.entity.Organizer;
+import se331.componentbaseassignment8.entity.Organizer;
 
 import jakarta.annotation.PostConstruct;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package se331.componentbaseassignment7.controller;
+package se331.componentbaseassignment8.controller;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import se331.componentbaseassignment7.entity.Event;
-import se331.componentbaseassignment7.service.EventService;
+import se331.componentbaseassignment8.entity.Event;
+import se331.componentbaseassignment8.service.EventService;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;

@@ -1,9 +1,9 @@
-package se331.componentbaseassignment7.service;
+package se331.componentbaseassignment8.dao;
 
-import se331.componentbaseassignment7.entity.Event;
+import se331.componentbaseassignment8.entity.Event;
 import java.util.List;
 
-public interface EventService {
+public interface EventDao {
     Integer getEventSize();
     List<Event> getEvents(Integer pageSize, Integer page);
     Event getEvent(Long id);

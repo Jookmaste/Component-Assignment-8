@@ -1,4 +1,4 @@
-package se331.componentbaseassignment7.entity;
+package se331.componentbaseassignment8.entity;
 
 import lombok.Builder;
 import lombok.Data;

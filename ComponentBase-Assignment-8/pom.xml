@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>se331</groupId>
-    <artifactId>ComponentBase-Assignment-7</artifactId>
+    <artifactId>ComponentBase-Assignment-8</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ComponentBase-Assignment-7</name>
-    <description>ComponentBase-Assignment-7</description>
+    <name>ComponentBase-Assignment-8</name>
+    <description>ComponentBase-Assignment-8</description>
     <url/>
     <licenses>
         <license/>
@@ -47,6 +47,17 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provieded</scope>
+        </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <!-- PostgreSQL driver -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 

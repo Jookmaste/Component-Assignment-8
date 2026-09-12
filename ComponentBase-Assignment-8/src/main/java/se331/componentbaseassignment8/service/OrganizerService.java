@@ -1,6 +1,6 @@
-package se331.componentbaseassignment7.service;
+package se331.componentbaseassignment8.service;
 
-import se331.componentbaseassignment7.entity.Organizer;
+import se331.componentbaseassignment8.entity.Organizer;
 import java.util.List;
 
 public interface OrganizerService {

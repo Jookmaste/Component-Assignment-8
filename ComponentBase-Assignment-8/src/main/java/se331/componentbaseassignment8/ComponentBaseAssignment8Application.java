@@ -1,4 +1,4 @@
-package se331.componentbaseassignment7;
+package se331.componentbaseassignment8;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class ComponentBaseAssignment7Application {
+public class ComponentBaseAssignment8Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(ComponentBaseAssignment7Application.class, args);
+        SpringApplication.run(ComponentBaseAssignment8Application.class, args);
     }
 
     @Bean

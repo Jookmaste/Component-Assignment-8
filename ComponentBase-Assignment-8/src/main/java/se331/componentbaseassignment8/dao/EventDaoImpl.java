@@ -1,13 +1,16 @@
-package se331.componentbaseassignment7.dao;
+package se331.componentbaseassignment8.dao;
 
 import org.springframework.stereotype.Repository;
-import se331.componentbaseassignment7.entity.Event;
+import org.springframework.context.annotation.Profile;
 
 import jakarta.annotation.PostConstruct;
+import se331.componentbaseassignment8.entity.Event;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+@Profile("memory")
 public class EventDaoImpl implements EventDao {
     List<Event> eventList;
 
