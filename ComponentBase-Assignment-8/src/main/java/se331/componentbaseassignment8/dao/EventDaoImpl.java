@@ -111,4 +111,11 @@ public class EventDaoImpl implements EventDao {
         int lastIndex = Math.min(firstIndex + pageSize, eventList.size());
         return new PageImpl<>(eventList.subList(firstIndex, lastIndex), PageRequest.of(page - 1, pageSize), eventList.size());
     }
+
+    @Override
+    public Event save(Event event) {
+        event.setId(eventList.get(eventList.size() - 1).getId() + 1);
+        eventList.add(event);
+        return event;
+    }
 }
