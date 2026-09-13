@@ -71,4 +71,11 @@ public class OrganizerDaoImpl implements OrganizerDao {
                 .findFirst()
                 .orElse(null);
     }
+
+    @Override
+    public Organizer save(Organizer organizer) {
+        organizer.setId((long) (organizerList.size() + 1));
+        organizerList.add(organizer);
+        return organizer;
+    }
 }
