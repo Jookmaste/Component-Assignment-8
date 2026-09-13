@@ -1,13 +1,15 @@
 package se331.componentbaseassignment8.dao;
 
-import org.springframework.stereotype.Repository;
-import org.springframework.context.annotation.Profile;
-
 import jakarta.annotation.PostConstruct;
+import org.springframework.context.annotation.Profile;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Repository;
 import se331.componentbaseassignment8.entity.Event;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 @Repository
 @Profile("memory")
@@ -96,16 +98,17 @@ public class EventDaoImpl implements EventDao {
     }
 
     @Override
-    public List<Event> getEvents(Integer pageSize, Integer page) {
-        pageSize = pageSize == null ? eventList.size() : pageSize;
-        page = page == null ? 1 : page;
-        int firstIndex = (page - 1) * pageSize;
-        return eventList.subList(firstIndex,Math.min(firstIndex + pageSize, eventList.size()));
-    }
-
-    @Override
     public Event getEvent(Long id) {
         return eventList.stream().filter(event ->
             event.getId().equals(id)).findFirst().orElse(null);
+    }
+
+    @Override
+    public Page<Event> getEvents(Integer pageSize, Integer page) {
+        pageSize = pageSize == null ? eventList.size() : pageSize;
+        page = page == null ? 1 : page;
+        int firstIndex = (page - 1) * pageSize;
+        int lastIndex = Math.min(firstIndex + pageSize, eventList.size());
+        return new PageImpl<>(eventList.subList(firstIndex, lastIndex), PageRequest.of(page - 1, pageSize), eventList.size());
     }
 }

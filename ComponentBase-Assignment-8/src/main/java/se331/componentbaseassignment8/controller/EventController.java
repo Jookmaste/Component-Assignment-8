@@ -1,5 +1,6 @@
 package se331.componentbaseassignment8.controller;
 
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +14,6 @@ import se331.componentbaseassignment8.entity.Event;
 import se331.componentbaseassignment8.service.EventService;
 import lombok.RequiredArgsConstructor;
 
-import java.util.List;
-
 @RestController
 @RequiredArgsConstructor
 public class EventController {
@@ -24,16 +23,16 @@ public class EventController {
     public ResponseEntity<?> getEventLists(
         @RequestParam(value = "_limit", required = false)Integer perPage, 
         @RequestParam(value = "_page", required = false)Integer page) {
-                List<Event> output = null;
-                Integer eventSize = eventService.getEventSize();
+                Page<Event> pageOutput = eventService.getEvents(perPage, page);
                 HttpHeaders responseHeaders = new HttpHeaders();
-                responseHeaders.set("x-total-count", String.valueOf(eventSize));
+                responseHeaders.set("x-total-count", 
+                String.valueOf(pageOutput.getTotalElements()));
                 try {
-                        output = eventService.getEvents(perPage, page);
-                        return ResponseEntity.ok().headers(responseHeaders).body(output);
-                }catch (IndexOutOfBoundsException ex){
-                        return ResponseEntity.ok().headers(responseHeaders).body(output);
+                    return ResponseEntity.ok().headers(responseHeaders).body(pageOutput.getContent());
+                } catch (IndexOutOfBoundsException e) {
+                    return ResponseEntity.ok().headers(responseHeaders).body(pageOutput.getContent());
                 }
+            
         }
 
     @GetMapping("events/{id}")
