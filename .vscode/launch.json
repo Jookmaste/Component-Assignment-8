@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ComponentBaseAssignment8Application<ComponentBase-Assignment-8>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "se331.componentbaseassignment8.ComponentBaseAssignment8Application",
+            "projectName": "ComponentBase-Assignment-8",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
