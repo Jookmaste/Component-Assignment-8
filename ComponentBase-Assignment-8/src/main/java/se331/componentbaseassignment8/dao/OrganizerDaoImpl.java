@@ -1,5 +1,6 @@
 package se331.componentbaseassignment8.dao;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import se331.componentbaseassignment8.entity.Organizer;
 
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+@Profile("!db")
 public class OrganizerDaoImpl implements OrganizerDao {
     List<Organizer> organizerList;
 
